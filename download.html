@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composer</title>
+    <link rel="icon" type="image/jpg" href="image/icon.jpg">
+</head>
+<body>
+    <h2>
+        <img width="30" src="image/icon.jpg" alt="composer icon">
+        <a href="home.html" style="text-decoration: none;">Home</a>| <a href="getting_started.html" style="text-decoration: none;">Getting Started</a>| Download| <a href="documentation.html" style="text-decoration: none;">Documentation</a>| <a href="" style="text-decoration: none;">Browse
+            packages</a>
+        </h2>
+
+        <h1>
+            Download Composer
+            <sup>
+                <span style="font-size: 16px;">
+                    Latest: v2.10.2
+                </span>
+            </sup>
+        </h1> 
+
+        <p>
+            To quickly install Composer in the current directory, run the following script in your terminal. <br>
+            To automate the installation, use <a href="" style="text-decoration: none;">the guide on installing Composer programmatically.</a>
+        </p>
+        <p style="border: 1px solid black; width= 1px; height: auto; overflow: auto; white-space: pre;">
+    
+            php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"php -r "if (hash_file('sha384', 'composer-setup.php') === 'c8b085408188070d5f52bcfe4ecfbee5f727afa458b2573b8eaaf77b3419b0bf2768dc67c86944da1544f06fa544fd47') { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+            php composer-setup.php
+            php -r "unlink('composer-setup.php');"
+        </p>
+        
+        <p>
+            This installer script will simply check some <code style="border: 1px solid lightgray;">php.ini</code> settings, warn you if they are set incorrectly, and then download the latest <br>
+            <code style="border: 1px solid lightgray;">composer.phar</code> in the current directory. The 4 lines above will, in order:
+        </p>
+        <ul>
+            <li>Download the installer to the current directory</li>
+            <li>Verify the installer SHA-384, which you can also <a href="" style="text-decoration: none;">cross-check here</a></li>
+            <li>Run the installer</li>
+            <li>Remove the installer</li>
+        </ul>
+        <p>Most likely, you want to put the <code style="border: 1px solid lightgray;">composer.phar</code> into a directory on your PATH, so you can simply call <code style="border: 1px solid lightgray;">composer</code> from any directory (Global install), using for example:</p>
+        <code style="background-color: rgb(239, 237, 234);">sudo mv composer.phar /usr/local/bin/composer</code>
+
+        <p>For details, <a href="" style="text-decoration: none;">see the instructions on how to install Composer globally.</a></p>
+         <p style="background-color: bisque;">WARNING: Please do not redistribute the install code. It will change with every version of the installer. Instead, please link to this <br>page or 
+            check how to install Composer programmatically.</p>
+
+         <h2>Notable Installer Options</h2>
+         <h3>--install-dir</h3>
+         <p>You can install composer to a specific directory by using the --install-dir option and providing a target directory. Example:</p>
+         <code style="border: 1px solid lightgray;">php composer-setup.php --install-dir=bin</code>
+         <h3>--filename</h3>
+         <p>You can specify the filename (default: composer.phar) using the --filename option. Example:</p>
+         <code style="border: 1px solid lightgray;">php composer-setup.php --filename=composer</code>
+         <h3>--version</h3>
+         <p>You can install composer to a specific release by using the <code style="border: 1px solid lightgray;">--version</code> option and providing a target release. Example:</p>
+         <code style="border: 1px solid lightgray;">php composer-setup.php --version=1.0.0-alpha8</code>
+         <h3>--preview, --snapshot, --1 (EOL), --2, --2.2 (LTS)</h3>
+         <p>Select a specific version channel instead of the default latest stable. See "Download channels" below for more details. Example:</p>
+         <code style="border: 1px solid lightgray;">php composer-setup.php --2.2</code>
+         <p>--help</p>
+         <p>The installer provides more options for specific environments, use the <code style="border: 1px solid lightgrey;">--help</code> option to see all of them.</p>
+         <h2>Download channels</h2>
+         <p>By default the installer and <code style="border: 1px solid lightgray;">composer self-update</code> will download the latest stable version only. You may select a different download channel though.
+            <br>If you would like to help test pre-release versions you can use the <code style="border: 1px solid lightgray;">--preview</code> flag on either the installer or self-update.
+            <br>For snapshot builds, which are done from the latest Composer commit, you can use the <code style="border: 1px solid lightgray;">--snapshot</code> flag.
+            <br>To programmatically install specific major versions you can use the <code style="border: 1px solid lightgray;">--1</code> or <code style="border: 1px solid lightgray;">--2</code> flag. To select the latest 2.2 LTS you can use <code style="border: 1px solid lightgray;">--2.2.</code></p>
+            <h2>Maintenance policy</h2>
+            <p>Bug fixes are only guaranteed to be provided for the latest feature release. Long-term support (LTS) releases additionally receive security fixes for an
+                 extended period. The <code style="border: 1px solid lightgray;">maintenance-until</code> dates below are a minimum guarantee, not a hard cutoff.</p>
+
+                 <table border="1px">
+                    <tr>
+                        <th>Release line</th>
+                        <th>Status</th>
+                        <th>Maintained until (minimum)</th>
+                    </tr>
+                    <tr>
+                        <td><code style="border: 1px solid lightgrey;">2.10.x</code></td>
+                        <td>Bug & security fixes</td>
+                        <td>Next minor release</td>
+                    </tr>
+                    <tr>
+                        <td><code style="border: 1px solid lightgrey;">2.2.x</code><b>(LTS)</b></td>
+                        <td>Critical security fixes only</td>
+                        <td>2026-12-31</td>
+                    </tr>
+                    <tr>
+                        <td><code style="border: 1px solid lightgrey;">1.10.x</code></td>
+                        <td>End of life</td>
+                        <td>2026-05-30</td>
+                    </tr>
+                 </table>
+                 <H2>Manual Download</H2>
+                 <p>If you prefer to download the phar manually, here are the available versions: <br>
+                    <br>
+                    <a href="" style="text-decoration: none;">Latest Stable (sha256 / sha256sum / asc)</a> for PHP 7.2+ users
+                    <a href="" href="" style="text-decoration: none;">Latest Preview (alpha/beta/RC) (sha256 / sha256sum / asc)</a>
+                    <a href="" href="" style="text-decoration: none;">Latest Snapshot (sha256 / sha256sum)</a>
+                    <a href="" href="" style="text-decoration: none;">Latest 2.x (sha256 / sha256sum / asc)</a>
+                    <a href="" style="text-decoration: none;">Latest 2.2.x LTS (sha256 / sha256sum / asc)</a> for PHP 5.3 to 7.1. For PHP 7.2+ please use the latest version instead of LTS. See the 
+                    <br><a href="" style="text-decoration: none;">LTS version support policy</a> for more information.
+
+</p>
+
+
+         
+
+
+
+
+</body>
+</html>
